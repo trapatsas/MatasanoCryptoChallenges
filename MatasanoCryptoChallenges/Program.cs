@@ -68,6 +68,19 @@ namespace MatasanoCryptoChallenges
             Console.WriteLine("===================");
             // Solution
 
+            var ch05 = "Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal";
+
+            var c_key = "ICE";
+
+            var n = ch05.Length / c_key.Length;
+            var d = ch05.Length % c_key.Length;
+
+
+            var x = c_key.Substring(0, d) ;
+            var y = string.Concat(Enumerable.Repeat(c_key, n)) + x;
+
+            Console.WriteLine(ConvertText2Hex(GetXOR(ch05, y)));
+
 
             // END
             Console.ReadKey();
